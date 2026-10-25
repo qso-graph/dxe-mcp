@@ -19,7 +19,8 @@ from fastmcp import FastMCP
 from . import __version__
 
 PLANNED = (
-    "Which DXpeditions are on the air now, which are announced, their bands, modes and QSL routes, and online log lookup where a published source allows it."
+    "Which DXpeditions are on the air now, which are announced, their bands, "
+    "modes and QSL routes, and online log lookup where a published source allows it."
 )
 TRACKING = "https://github.com/qso-graph/qso-graph-devel/issues/50"
 
@@ -34,7 +35,26 @@ mcp = FastMCP(
 )
 
 
-@mcp.tool()
+# MCP 2026-07-28 tool annotations. The defaults are pessimistic — a tool that
+# declares nothing is advertised as destructive, non-idempotent and open-world,
+# and the specification tells a client it may keep a human in the loop for that.
+# That is the wrong answer for a tool which reports this package's own version.
+#
+# One tool, one block, and the block is not borrowed from the owner-list servers:
+# it is the same four values for a different reason. There the reason is carried
+# reference data; here it is that get_version_info returns constants compiled into
+# the wheel. tests/test_mcp_conformance.py asserts that reason rather than the
+# values, so the day this server grows a tool that fetches a DXpedition list, the
+# test fails instead of the hints quietly becoming wrong.
+_ANSWERS_FROM_THE_PACKAGE = {
+    "readOnlyHint": True,
+    "destructiveHint": False,
+    "idempotentHint": True,
+    "openWorldHint": False,
+}
+
+
+@mcp.tool(annotations=_ANSWERS_FROM_THE_PACKAGE)
 def get_version_info() -> dict[str, Any]:
     """Get this server's version and development status.
 

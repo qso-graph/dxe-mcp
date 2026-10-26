@@ -1,6 +1,6 @@
 [project]
 name = "dxe-mcp"
-version = "0.0.3"
+version = "0.0.4"
 description = "DXpedition tracking MCP server — in development"
 readme = "README.md"
 license = {text = "GPL-3.0-or-later"}

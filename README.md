@@ -98,6 +98,6 @@ Not yet—these are what the finished server is for:
 
 > "How do I QSL for this expedition?"
 
-## Licence
+## License
 
 GPL-3.0-or-later. See [LICENSE](LICENSE).

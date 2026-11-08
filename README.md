@@ -7,7 +7,7 @@
 >
 > This package is published so the name is held while the work is planned in the open.
 > It registers one tool, `get_version_info`, and **does nothing else yet**. If you install
-> it expecting a working server, that is what you will find — which is why it says so
+> it expecting a working server, that is what you will find—which is why it says so
 > here, in the server's own instructions, and in the one tool it has.
 >
 > PyPI does not reserve a name for a pending trusted publisher, so a name is only held
@@ -36,7 +36,7 @@ uvx dxe-mcp            # run it; nothing to install
 
 ## Quick Start
 
-No credentials needed — install and configure your MCP client.
+No credentials needed—install and configure your MCP client.
 
 ### Configure your MCP client
 
@@ -90,7 +90,7 @@ Configure via Settings > Apps & Connectors, or in your agent definition:
 
 ### Questions it will answer
 
-Not yet — these are what the finished server is for:
+Not yet—these are what the finished server is for:
 
 > "Which DXpeditions are active right now?"
 
